@@ -1,0 +1,115 @@
+{
+//role 10 : End users
+// role 20 : Organisation Admin
+// role 30 : Cashier
+// role 40 : Kitchen chef
+// role 50 : server
+// role 100 : global admin
+{
+
+
+
+	"users": {
+		"$Userid": {
+			"active": "true",
+			"blocked": "false",
+			"verified": "true",
+			"profile": {
+				"email": "cmdevendran@gmail.com",
+				"displayname": "Devendran",
+				"photourl":"",
+        "createddate":""
+			},
+			"restaurants": {
+				"-uniqueresId_1": {
+					"name": "A great Company",
+					"staffId": "uniqueStaffId_2",
+					"role": 10
+				}
+			}
+		}
+
+	},
+
+	"Restaurants": {
+
+
+		"-uniqueOrgId_1": {
+			"about": {
+				"address": "1200, 6th Street, Austin, TX",
+				"address 2 ": "1200, 6th Street, Austin, TX",
+				"city": "",
+				"State": "",
+				"Country": "",
+				"name": "A great Company",
+				"phone": "512-111-1111",
+				"Company Reg No": "",
+				"GST No": "",
+				"Charge GST": "",
+        "createddate":"",
+        "createdby":"",
+        "lastmodifieddate":"",
+        "lastmodifiedby":""
+
+			},
+
+			"menucategory": {
+				"categoryname": ""
+
+			},
+
+			"menuitems": {
+				"item name": "",
+				"item description": "",
+				"item img path": "",
+				"item price": ""
+
+			},
+
+			"menus": {
+				"_menucategoryId_1": {
+					"categoryname": "",
+					"item name": "",
+					"item description": "",
+					"item img path": "",
+					"item price": ""
+
+				}
+        },
+
+
+				"staff": {
+					"-uniqueStaffId_1": {
+						"name": "John Doe",
+						"email": "john@doe.com",
+						"role": 5
+            "createddate":"",
+            "createdby":"",
+            "lastmodifieddate":"",
+            "lastmodifiedby":""
+					}
+				}
+
+        "Orders":{
+        "-uniqueorderid": {
+          "name": "John Doe",
+          "email": "john@doe.com",
+          "role": 5
+          "createddate":"",
+          "createdby":"",
+          "lastmodifieddate":"",
+          "lastmodifiedby":""
+        }
+
+        }
+
+
+
+
+
+		}
+	}
+
+
+
+}
