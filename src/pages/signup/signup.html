@@ -6,13 +6,64 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Signup</ion-title>
+  <ion-navbar color="myred">
+    <ion-title>New User Sign up</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <form [formGroup]="signForm" (ngSubmit)="signup()">
+
+    <ion-row>
+      <ion-item>
+        <ion-label for="displayname"></ion-label>
+        <ion-input type="text" value="" placeholder="Display Name" formControlName="displayname"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-label for="email"></ion-label>
+        <ion-input type="email" value="" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-label for="password"></ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-label for="mobile"></ion-label>
+        <ion-input type="number" value="" placeholder="MobileNumber" formControlName="mobile"></ion-input>
+      </ion-item>
+    </ion-row>
+
+
+
+
+
+    <ion-row>
+      <button (click)="signup()" ion-button block [disabled]="!signForm.valid">Sign In</button>
+    </ion-row>
+    <ion-row>
+      <button (click)="addProfileDetails()" ion-button >Sign In</button>
+    </ion-row>
+<div >
+    <ion-row >
+
+  <ion-label text-wrap color=red  >
+  {{anyErrors}}
+  </ion-label>
+
+    </ion-row>
+  </div>
+  </form>
 
 </ion-content>

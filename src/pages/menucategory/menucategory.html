@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MenucategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header color="myred">
+
+  <ion-navbar>
+    <ion-title>menucategory</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <button (click)="getRestaurantID()" ion-button >Sign In</button>
+
+        <button (click)="getdata()" ion-button >get dtan</button>
+
+
+
+
+  <ion-item>
+
+    <ion-label>Add a Category</ion-label>
+
+
+    <ion-icon item-right name="add-circle" (click)="addCategory()"></ion-icon>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      Categories
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let cat of cats | async" >
+        {{cat.categoryname}}
+          <ion-icon item-right name="remove-circle" (click)="removeCat(cat.$key)"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>

@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="myred">
     <ion-title>Login</ion-title>
   </ion-navbar>
 
@@ -15,36 +15,49 @@
 <ion-content>
 
 
-<div *ngIf="!auth.currentUserName">
-
-    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
-      <ion-row>
-        <ion-item>
-          <ion-label for="email"></ion-label>
-          <ion-input type="email" value="" placeholder="Email" formControlName="email"></ion-input>
-        </ion-item>
-      </ion-row>
-      <ion-row>
-        <ion-item>
-          <ion-label for="password"></ion-label>
-          <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
-        </ion-item>
-      </ion-row>
-      <ion-row>
-        <button (click)="login()" ion-button block>Log in</button>   <button (click)="signUp()" ion-button block>Sign In</button>
-      </ion-row>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+    <ion-row>
+      <ion-item>
+        <ion-label for="email"></ion-label>
+        <ion-input type="email" value="" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label for="password"></ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <button (click)="login()" ion-button block>Log in</button>
+    </ion-row>
 <div >
-      <ion-row >
-        <ion-item  >
-          <ion-label text-wrap color=red color="primary" >
-    {{anyErrors}}
-    </ion-label>
-  </ion-item>
-      </ion-row>
-    </div>
-    </form>
+    <ion-row >
 
+        <ion-label text-wrap color=red  >
+  {{anyErrors}}
+  </ion-label>
 
+    </ion-row>
   </div>
+  </form>
+
+  <ion-row>
+    <ion-label color="primary">
+      New User ? Sign up here <button (click)="signUp()" ion-button block round>Sign In</button>
+
+    </ion-label>
+  </ion-row>
+
+  <ion-row>
+    <ion-label color="primary">
+     Register as a Restaurant Owner <button (click)="register()" ion-button block round>Register</button>
+
+    </ion-label>
+  </ion-row>
+
+
+
+
 
   </ion-content>
