@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -17,7 +18,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConfig } from '../env/environment';
 import { AuthProvider } from '../providers/auth/auth';
+import { AskProvider } from '../providers/ask';
+import { RestProvider } from '../providers/restaurant';
 import { MenucategoryPage } from '../pages/menucategory/menucategory';
+import { MenuitemPage } from '../pages/menuitem/menuitem';
 
 
 @NgModule({
@@ -28,12 +32,15 @@ import { MenucategoryPage } from '../pages/menucategory/menucategory';
     ProfilePage,
     SignupPage,
     RegisterPage,
-    MenucategoryPage
+    MenucategoryPage,
+    MenuitemPage
 
   ],
   imports: [
     BrowserModule,
+     HttpModule,
     IonicModule.forRoot(MyApp),
+
     AngularFireModule.initializeApp(firebaseConfig),
   AngularFireDatabaseModule,
   AngularFireAuthModule,
@@ -46,14 +53,17 @@ import { MenucategoryPage } from '../pages/menucategory/menucategory';
     ProfilePage,
     SignupPage,
     RegisterPage,
-    MenucategoryPage
+    MenucategoryPage,
+    MenuitemPage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    RestProvider,
+    AskProvider
   ]
 })
 export class AppModule {}

@@ -20,14 +20,25 @@ import firebase from 'firebase';
 })
 export class MenucategoryPage {
   cats: FirebaseListObservable<any[]>;
+    userRestaurants : FirebaseListObservable<any[]>;
+  public userProfile:firebase.database.Reference;
+public currentUser:firebase.User;
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
     public auth: AuthProvider, public db: AngularFireDatabase) {
 
+    this. userRestaurants = db.list('/users/HMxFSQyw2QcXkRbCju1R0DLJA6x2/' );
+console.log("curre : "+this.userRestaurants + " "+this.auth.currentUser);
 
-    this.cats = db.list('/' + this.auth.currentUser + '/category');
-    console.log('/' + this.auth.currentUser + '/category');
+
+
+
+
+
+    this.cats = db.list('/Restaurants');
+
     this.auth.checkAuth();
     if (this.auth.myauthdata == null) {
       console.log("credentials from category");
@@ -98,28 +109,8 @@ export class MenucategoryPage {
 
   public items: FirebaseListObservable<any[]>;
   restkey: string;
-  getRestaurantID(): string {
-    console.log('restaurant id clicked ' + this.auth.currentUser);
-
-    this.items = this.db.list('/users/' + this.auth.currentUser, { preserveSnapshot: true });
-    this.items
-      .subscribe(snapshots => {
-        //  console.log(snapshots.restaurantid.val());
-
-        snapshots.forEach(snapshot => {
-          if (snapshot.key == "restaurantid") {
-            this.restkey = snapshot.val();
-          }
-          // console.log(snapshot.key);
-          // console.log(snapshot.val());
-        });
 
 
-
-      });
-    console.log("rest key returned : " + this.restkey);
-    return this.restkey;
-  }
 
 
 
