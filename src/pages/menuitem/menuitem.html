@@ -16,17 +16,13 @@
 <ion-content padding>
 
 
-    <div>
-      <ion-item>
-        <ion-input type="text" placeholder="Add Menu Category" [(ngModel)]="menuCat"> </ion-input>
+  <div>
+    <ion-item>
+      <ion-input type="text" placeholder="Add Menu Category" value={{vmenuCat}} [(ngModel)]="menuCat"> </ion-input>
+      <ion-icon item-right name="add-circle" (click)="addMenuCategory(menuCat)"></ion-icon>
+    </ion-item>
 
-
-
-
-        <ion-icon item-right name="add-circle" (click)="addMenuCategory()"></ion-icon>
-      </ion-item>
-
-    </div>
+  </div>
 
 
 
@@ -35,27 +31,32 @@
       Restaurants
     </ion-card-header>
 
-    <ion-list>
-      <ion-item *ngFor="let data of datas ">
-        {{data.name}}
+    <ion-list >
+      <ion-item >
+    {{restid}} : {{restname}}
 
-        <ion-icon item-right name="remove-circle" (click)="showAlert(data)"></ion-icon>
+
       </ion-item>
     </ion-list>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      Restaurants
+      Menu Categories
     </ion-card-header>
 
     <ion-list>
-      <ion-item *ngFor="let mycat of mycats ">
-        {{mycat.menucategory.categoryname}}
 
-        <ion-icon item-right name="remove-circle" (click)="showAlert(data)"></ion-icon>
-      </ion-item>
-    </ion-list>
+            <!-- iterate thru each item in the list, use $index as item identifier -->
+            <ion-item *ngFor="let menudata of menudatas; let i=index">
+          {{i}} - {{menudata.categoryname}}
+            <ion-icon item-right name="remove-circle" (click)="confirmDeleteMenuCategory(menudata.categoryname)"></ion-icon>
+            </ion-item>
+      </ion-list>
+
+
+
+
   </ion-card>
 
 
