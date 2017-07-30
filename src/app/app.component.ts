@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
-import { MenucategoryPage } from '../pages/menucategory/menucategory';
+import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
 
 @Component({
@@ -28,8 +28,9 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Login', component: LoginPage },
-      { title: 'menu category', component: MenucategoryPage},
-        { title: 'menu item', component: MenuitemPage}
+      { title: 'Menu categoryname', component: MenuitemPage},
+      { title: 'Menu Items', component: CreatemenuitemPage}
+
     ];
 
   }

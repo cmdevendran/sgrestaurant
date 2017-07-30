@@ -20,7 +20,7 @@ import { firebaseConfig } from '../env/environment';
 import { AuthProvider } from '../providers/auth/auth';
 import { AskProvider } from '../providers/ask';
 import { RestProvider } from '../providers/restaurant';
-import { MenucategoryPage } from '../pages/menucategory/menucategory';
+import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
 
 
@@ -32,7 +32,7 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
     ProfilePage,
     SignupPage,
     RegisterPage,
-    MenucategoryPage,
+    CreatemenuitemPage,
     MenuitemPage
 
   ],
@@ -53,7 +53,7 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
     ProfilePage,
     SignupPage,
     RegisterPage,
-    MenucategoryPage,
+    CreatemenuitemPage,
     MenuitemPage
 
   ],

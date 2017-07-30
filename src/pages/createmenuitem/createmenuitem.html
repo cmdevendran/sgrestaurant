@@ -1,0 +1,67 @@
+<!--
+  Generated template for the CreatemenuitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header color="myred">
+
+  <ion-navbar>
+    <ion-title>Create Menu Items</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Restaurants
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        {{restname}}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+<form [formGroup]="vmenuForm" (ngSubmit)="createMenuItem()">
+  <ion-card>
+    <ion-card-header>
+      Menu Categories
+    </ion-card-header>
+    <ion-list radio-group formControlName="vCatName" >
+      <!-- iterate thru each item in the list, use $index as item identifier -->
+      <ion-item *ngFor="let menudata of menudatas" >
+        <ion-label>{{menudata.categoryname}}</ion-label>
+        <ion-radio  value={{menudata._id}} > </ion-radio>
+
+
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <div>
+    <ion-item>
+      <ion-input type="text" placeholder="Item Name"  formControlName="vmenuName"> </ion-input>
+
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Description"  formControlName="vmenuDesc"> </ion-input>
+
+    </ion-item>
+    <ion-item>
+    <ion-input type="number" placeholder="Price" formControlName="vmenuPrice" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.05"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Price inclusive of GST ?</ion-label>
+      <ion-toggle  checked=false formControlName="vmenuGST" ></ion-toggle>
+    </ion-item>
+
+
+  </div>
+
+  <button ion-button round type="submit" [disabled]="!vmenuForm.valid">Submit</button>
+</form>
+
+</ion-content>
