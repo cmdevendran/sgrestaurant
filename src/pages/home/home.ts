@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
+import { MenuhomePage } from '../menuhome/menuhome';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 
 @Component({
   selector: 'page-home',
@@ -25,4 +27,12 @@ export class HomePage {
   });
 
 }
+
+next(el) {
+    el.setFocus();
+  }
+
+  getMenuCat(){
+  this.navCtrl.push(MenuhomePage);
+  }
 }

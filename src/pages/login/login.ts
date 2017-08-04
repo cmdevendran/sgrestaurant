@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { AuthProvider } from '../../providers/auth/auth';
 import {SignupPage} from '../signup/signup';
 import {HomePage} from '../home/home';
+import {NpmauthProvider} from '../../providers/npmauth';
 
 import {RegisterPage} from '../register/register';
 import { App, ViewController, Nav } from 'ionic-angular';
@@ -36,7 +37,7 @@ loginForm: FormGroup;
 
 
   constructor(public navCtrl: NavController, private fb: FormBuilder,
-              public auth: AuthProvider
+              public auth: AuthProvider, public npmauth : NpmauthProvider
               ) {
   console.log("Entering LoginPage....");
 
@@ -58,7 +59,11 @@ loginForm: FormGroup;
           var credentials = ({email: this.email.value, password: this.password.value}); //Added next lines
           this.auth.loginWithEmail(credentials).subscribe((data) => {
           this.userName = data.email;
-          console.log(this.userName);
+          console.log("Within Login : "+ this.userName);
+          this.npmauth.getAuthToken(this.auth.currentUser).subscribe((user)=>{
+        //  console.log(user.token);
+          });
+
           //this.navCtrl.setRoot(HomePage);
         this.navCtrl.setRoot(HomePage);
       //  this.navCtrl.pop();
@@ -87,6 +92,10 @@ loginForm: FormGroup;
 
     register(): void{
     this.navCtrl.setRoot(RegisterPage);
+    }
+
+    getToken():void{
+
     }
 
 

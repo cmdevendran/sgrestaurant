@@ -5,6 +5,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 import { AuthProvider } from '../../providers/auth/auth';
 import firebase from 'firebase';
+import {HomePage} from '../home/home';
 
 /**
  * Generated class for the MenucategoryPage page.
@@ -109,6 +110,11 @@ console.log("curre : "+this.userRestaurants + " "+this.auth.currentUser);
 
   public items: FirebaseListObservable<any[]>;
   restkey: string;
+
+
+    goBack(){
+    this.navCtrl.setRoot(HomePage);
+    }
 
 
 

@@ -20,8 +20,10 @@ import { firebaseConfig } from '../env/environment';
 import { AuthProvider } from '../providers/auth/auth';
 import { AskProvider } from '../providers/ask';
 import { RestProvider } from '../providers/restaurant';
+import {NpmauthProvider} from '../providers/npmauth';
 import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
+import { MenuhomePage } from '../pages/menuhome/menuhome';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
     SignupPage,
     RegisterPage,
     CreatemenuitemPage,
-    MenuitemPage
+    MenuitemPage,
+    MenuhomePage
 
   ],
   imports: [
@@ -54,7 +57,8 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
     SignupPage,
     RegisterPage,
     CreatemenuitemPage,
-    MenuitemPage
+    MenuitemPage,
+    MenuhomePage
 
   ],
   providers: [
@@ -63,7 +67,8 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     RestProvider,
-    AskProvider
+    AskProvider,
+    NpmauthProvider
   ]
 })
 export class AppModule {}

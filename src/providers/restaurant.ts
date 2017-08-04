@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {AuthProvider} from '../providers/auth/auth';
+import { nodeserver } from '../env/environment';
 
 
 
@@ -25,14 +26,14 @@ export class RestProvider {
 
   // get all Restaurants
   getRestaurants() {
-    return this.http.get('http://localhost:3001/api/restaurant')
+    return this.http.get(nodeserver+'/api/restaurant')
       .map(res => res.json());
   }
   //  get all Restaurants where user is marked with admin access
 
   getUserRestaurants() {
     console.log(this.auth.currentUser);
-    return this.http.get('http://localhost:3001/api/restaurant/' + this.auth.currentUser)
+    return this.http.get(nodeserver+'/api/restaurant/' + this.auth.currentUser)
       .map(res => res.json());
   }
 
@@ -43,7 +44,7 @@ export class RestProvider {
   addMenuCategory(menuCat) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3001/api/restaurant/' + menuCat.id, JSON.stringify(menuCat), { headers: headers })
+    return this.http.post(nodeserver+'/api/restaurant/' + menuCat.id, JSON.stringify(menuCat), { headers: headers })
       .map(res => res.json());
   }
 
@@ -53,7 +54,7 @@ export class RestProvider {
   deleteMenuCategory(menuCat) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3001/api/restaurant/' + menuCat.id + '/' + menuCat.menuCat1, { headers: headers })
+    return this.http.post(nodeserver+'/api/restaurant/' + menuCat.id + '/' + menuCat.menuCat1, { headers: headers })
       .map(res => res.json());
   }
 
@@ -61,7 +62,7 @@ export class RestProvider {
     createNewRestaurant(newRest) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      return this.http.post('http://localhost:3001/api/restaurant/', JSON.stringify(newRest), { headers: headers })
+      return this.http.post(nodeserver+'/api/restaurant/', JSON.stringify(newRest), { headers: headers })
         .map(res => res.json());
     }
 
@@ -72,7 +73,7 @@ export class RestProvider {
   console.log("Insite restaurant.ts New Menu Item"+newMenuItem);
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3001/menuitem/menuitem/'+newMenuItem.id, JSON.stringify(newMenuItem), { headers: headers })
+    return this.http.post(nodeserver+'/menuitem/menuitem/'+newMenuItem.id, JSON.stringify(newMenuItem), { headers: headers })
       .map(res => res.json());
   }
 

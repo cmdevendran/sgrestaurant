@@ -6,6 +6,8 @@ import {AskProvider} from '../../providers/ask';
 import {AlertController} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
+import {HomePage} from '../home/home';
+
 /**
  * Generated class for the CreatemenuitemPage page.
  *
@@ -42,6 +44,11 @@ private vmenuForm : FormGroup;
    });
 
   }
+
+
+    goBack(){
+    this.navCtrl.setRoot(HomePage);
+    }
 
 
   showAlert(data) {

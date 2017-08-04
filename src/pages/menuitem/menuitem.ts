@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
 import {AskProvider} from '../../providers/ask';
 import {AlertController} from 'ionic-angular';
+import {HomePage} from '../home/home';
+
 
 /**
  * Generated class for the MenuitemPage page.
@@ -27,7 +29,7 @@ export class MenuitemPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private restData: RestProvider, private alertController: AlertController) {
+    private restData: RestProvider, private alertController: AlertController, private viewCtrl : ViewController) {
     this.restData.getUserRestaurants().subscribe(data => {
       //  this.datas = data;
       this.restid = data._id;
@@ -38,6 +40,10 @@ export class MenuitemPage {
 
     });
 
+  }
+
+  goBack(){
+  this.navCtrl.setRoot(HomePage);
   }
 
   cucumber: string;
