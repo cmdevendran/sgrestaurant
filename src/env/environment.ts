@@ -6,4 +6,7 @@ apiKey: "AIzaSyBfRFP5s4V6F5IRMGDP-aFpk8MgLM1Xz08",
     storageBucket: "restaurants-ba1e2.appspot.com",
     messagingSenderId: "834822799893"
 };
+/*
 export const nodeserver = "http://simplyorder.cleverapps.io";
+*/
+export const nodeserver = "http://localhost:8080";

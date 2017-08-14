@@ -24,4 +24,13 @@ page-menuhome {
     }
 
   }
-}
+
+  .header{
+   position:relative; //makes relative to browser
+   }
+
+   .button-right{
+     position: absolute;
+     float: right
+   }
+  }

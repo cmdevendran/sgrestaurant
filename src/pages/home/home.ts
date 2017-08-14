@@ -33,6 +33,6 @@ next(el) {
   }
 
   getMenuCat(){
-  this.navCtrl.push(MenuhomePage);
+  this.navCtrl.setRoot(MenuhomePage);
   }
 }

@@ -53,7 +53,7 @@
 
             <!-- iterate thru each item in the list, use $index as item identifier -->
             <ion-item *ngFor="let menudata of menudatas; let i=index">
-          {{i}} - {{menudata.categoryname}}
+          {{menudata.categoryname}}
             <ion-icon item-right name="remove-circle" (click)="confirmDeleteMenuCategory(menudata.categoryname)"></ion-icon>
             </ion-item>
       </ion-list>

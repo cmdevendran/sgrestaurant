@@ -77,4 +77,22 @@ export class RestProvider {
       .map(res => res.json());
   }
 
+  getRestMenuCategory() {
+  //  console.log(this.auth.currentUser);
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(nodeserver+'/menuitem/servemenucat/59799c695119e91ea4ab113c',{ headers: headers })
+      .map(res => res.json());
+  }
+
+  getRestMenuItems(passme){
+  console.log("inside getRestMenuItems  : "+passme);
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  return this.http.post(nodeserver+'/menuitem/servemenuitems/'+passme.restid , JSON.stringify(passme), { headers: headers })
+    .map(res => res.json());
+
+  }
+
+
 }

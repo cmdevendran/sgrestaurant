@@ -24,11 +24,14 @@ import {NpmauthProvider} from '../providers/npmauth';
 import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
 import { MenuhomePage } from '../pages/menuhome/menuhome';
+import { OrderPage } from '../pages/order/order';
+import {CheckoutPage} from '../pages/checkout/checkout';
 
 
 @NgModule({
   declarations: [
     MyApp,
+
     HomePage,
     LoginPage,
     ProfilePage,
@@ -36,7 +39,9 @@ import { MenuhomePage } from '../pages/menuhome/menuhome';
     RegisterPage,
     CreatemenuitemPage,
     MenuitemPage,
-    MenuhomePage
+    MenuhomePage,
+    CheckoutPage,
+    OrderPage
 
   ],
   imports: [
@@ -58,7 +63,9 @@ import { MenuhomePage } from '../pages/menuhome/menuhome';
     RegisterPage,
     CreatemenuitemPage,
     MenuitemPage,
-    MenuhomePage
+    MenuhomePage,
+    CheckoutPage,
+    OrderPage
 
   ],
   providers: [
