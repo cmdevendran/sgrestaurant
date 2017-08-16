@@ -40,8 +40,8 @@
             <!-- iterate thru each item in the list, use $index as item identifier -->
 
 <ion-card *ngFor="let menudata of menudatas; let i=index">
-  <img src="assets/img/hotdrink16.png"/>
-  <div class="card-title" (click)="getMenuItem(menudata._id)">  {{menudata.categoryname}} </div>
+<!--  <img src="assets/img/hotdrink16.png"/> -->
+  <div class="myred"  (click)="getMenuItem(menudata._id)">  {{menudata.categoryname}} </div>
 
 </ion-card>
 

@@ -94,5 +94,21 @@ export class RestProvider {
 
   }
 
+  placeNewOrder(Order){
+  console.log("Inside PlaceNewOrder New Order"+ Order);
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(nodeserver+'/api/order/neworder/'+Order.restaurant_id, JSON.stringify(Order), { headers: headers })
+      .map(res => res.json());
+  }
+
+  getUserOrders(username){
+  console.log("Inside get user Order"+ username.id);
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(nodeserver+'/api/order/getmyorder/'+username.id, JSON.stringify(username), { headers: headers })
+      .map(res => res.json());
+  }
+
 
 }

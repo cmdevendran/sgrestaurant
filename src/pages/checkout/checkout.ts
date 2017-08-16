@@ -7,6 +7,7 @@ import {AlertController} from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
 import 'rxjs/add/operator/map';
 
+
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -32,7 +33,7 @@ a=[];
 totalAmount = 0;
 
 constructor(public navCtrl: NavController, public navParams: NavParams,
-  private restData: RestProvider, private alertController: AlertController, private auth: AuthProvider,
+  private restData: RestProvider, private alertCtrl : AlertController, private auth: AuthProvider,
   public modalCtrl: ModalController, private viewCtrl : ViewController) {
 
   this.fromOrder = navParams.get('order');
@@ -89,6 +90,32 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
   goBack() {
 
    this.viewCtrl.dismiss(this.fromOrder);
+ }
+
+ placeOrder(){
+ let order ={
+ name : this.name,
+ restaurant_id : this.restid,
+ total_amount : this.totalAmount,
+ createdby: this.auth.currentUser,
+ createddate: "",
+ lastmodifiedby: this.auth.currentUser,
+ lastmodifieddate: "",
+ orderdetails : this.a
+ }
+ this.restData.placeNewOrder(order).subscribe(data => {
+ let alert = this.alertCtrl.create({
+
+   title: "NewOrder",
+   subTitle: "Order Created",
+   buttons: ['OK']
+ });
+
+ alert.present();
+
+
+
+ });
  }
 
  decrement(){

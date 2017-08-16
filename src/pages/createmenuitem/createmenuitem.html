@@ -8,7 +8,7 @@
   <ion-navbar color="myred">
     <ion-buttons color="dark">
     <button ion-button  (click)="goBack()" >
-      <ion-icon name="arrow-back"> Back</ion-icon>
+      <ion-icon name="arrow-back"></ion-icon>
     </button></ion-buttons>
     <ion-title>Create New Menu Items</ion-title>
   </ion-navbar>
@@ -60,6 +60,12 @@
       <ion-label>Price inclusive of GST ?</ion-label>
       <ion-toggle  checked=false formControlName="vmenuGST" ></ion-toggle>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Is Item Available ?</ion-label>
+      <ion-toggle  checked=true formControlName="vIsMenuAvailable" ></ion-toggle>
+    </ion-item>
+
 
 
   </div>

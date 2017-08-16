@@ -1,6 +1,39 @@
 page-checkout {
-  .my{
-  font-size: 30px;
-}
+  ion-card {
+    position: relative;
+    text-align: center;
+    background-color: #f0ffff;
+  }
+
+
+  .card-title {
+     position: absolute;
+     top: 36%;
+     font-size: 2.0em;
+     width: 100%;
+     font-weight: bold;
+     color: primary;
+   }
+
+   .card-subtitle {
+     font-size: 1.0em;
+     position: absolute;
+     top: 52%;
+     width: 100%;
+     color: #fff;
+   }
+   .card-header {
+
+      align-items:flex-start;
+
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: primary;
+      }
+      .amount{
+        font-size: 2.5em;
+        font-weight: bold;
+      }
 
 }

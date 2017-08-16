@@ -18,12 +18,26 @@
 
 
 <ion-content padding>
+
   <ion-card>
-    <h2 class="my">Total Amount : $ {{totalAmount}}</h2>
-  </ion-card>
+
+
+    <ion-card-header>
+      Amount to Pay
+    </ion-card-header>
+      <ion-card-content>
+<div class="amount">
+      $ {{totalAmount}}
+    </div>
+    <!-- buttons should go here -->
+    <button ion-button (click)="placeOrder()">Confirm</button>
+
+  </ion-card-content>
+</ion-card>
+
 
   <ion-list>
-    <ion-item *ngFor="let menuitem of a">
+    <ion-item *ngFor="let menuitem of a ">
       <ion-avatar item-start>
         <img src="img/avatar-finn.png">
       </ion-avatar>

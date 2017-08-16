@@ -40,6 +40,7 @@ private vmenuForm : FormGroup;
      vmenuName : ['', Validators.required],
      vmenuDesc : ['',Validators.required],
      vmenuPrice : ['',Validators.required],
+     vIsMenuAvailable : ['',Validators.required],
      vmenuGST : ['']
    });
 
@@ -94,7 +95,8 @@ createMenuItem(){
         menu_item_img : "",
         addgst : this.vmenuForm.value.vmenuGST,
         item_price : this.vmenuForm.value.vmenuPrice,
-        lastmodifiedby:this.auth.currentUser
+        lastmodifiedby:this.auth.currentUser,
+        menu_is_available : this.vmenuForm.value.vIsMenuAvailable
 
       }
 

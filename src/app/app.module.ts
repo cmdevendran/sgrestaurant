@@ -25,6 +25,7 @@ import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
 import { MenuhomePage } from '../pages/menuhome/menuhome';
 import { OrderPage } from '../pages/order/order';
+import { MyordersPage } from '../pages/myorders/myorders';
 import {CheckoutPage} from '../pages/checkout/checkout';
 
 
@@ -41,7 +42,8 @@ import {CheckoutPage} from '../pages/checkout/checkout';
     MenuitemPage,
     MenuhomePage,
     CheckoutPage,
-    OrderPage
+    OrderPage,
+    MyordersPage
 
   ],
   imports: [
@@ -65,7 +67,8 @@ import {CheckoutPage} from '../pages/checkout/checkout';
     MenuitemPage,
     MenuhomePage,
     CheckoutPage,
-    OrderPage
+    OrderPage,
+    MyordersPage 
 
   ],
   providers: [
