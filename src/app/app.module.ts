@@ -27,6 +27,8 @@ import { MenuhomePage } from '../pages/menuhome/menuhome';
 import { OrderPage } from '../pages/order/order';
 import { MyordersPage } from '../pages/myorders/myorders';
 import {CheckoutPage} from '../pages/checkout/checkout';
+import {VieworderPage} from '../pages/vieworder/vieworder';
+
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import {CheckoutPage} from '../pages/checkout/checkout';
     MenuhomePage,
     CheckoutPage,
     OrderPage,
-    MyordersPage
+    MyordersPage,
+    VieworderPage
+
 
   ],
   imports: [
@@ -68,7 +72,8 @@ import {CheckoutPage} from '../pages/checkout/checkout';
     MenuhomePage,
     CheckoutPage,
     OrderPage,
-    MyordersPage 
+    MyordersPage,
+    VieworderPage
 
   ],
   providers: [

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {HomePage} from '../home/home';
 import {OrderPage} from '../order/order';
 import {CheckoutPage} from '../checkout/checkout';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ToastController } from 'ionic-angular';
 import {AuthProvider} from '../../providers/auth/auth';
 import {AlertController} from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
@@ -32,7 +32,7 @@ vmenuitems : any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private restData: RestProvider, private alertController: AlertController, private auth: AuthProvider,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController, public toastCtrl: ToastController) {
     this.fromOrder = navParams.get("objNumber");
 
     console.log("order itesm : "+this.orderItems);
@@ -82,24 +82,27 @@ menuitems : any[];
 
   checkOut(){
   console.log("triggering checkout..");
+  if(this.fromOrder){
   let profileModal = this.modalCtrl.create(CheckoutPage,  {restid : this.restid, menuitem :  this.vmenuitems, name : this.restname,  order : this.fromOrder});
   profileModal.present();
-}
-
-
-
-
-
-
-  presentOrder(){
-
-   let profileModal = this.modalCtrl.create(OrderPage, {menuitem : this.menuitems});
-   profileModal.present();
-
-
-
+  }else{
+  this.presentToast();
   }
 
+}
+
+presentToast() {
+    let toast = this.toastCtrl.create({
+    message: 'Please Select at least one item',
+    showCloseButton: true,
+    duration: 2000,
+    cssClass: "toastClassName",
+    position : 'middle'
+
+    });
+
+    toast.present();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuhomePage');

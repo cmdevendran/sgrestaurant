@@ -40,7 +40,7 @@ export class RestProvider {
 
 
 
-// add new Menu Category
+// add new Menu Category for Restaurant
   addMenuCategory(menuCat) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ export class RestProvider {
 
 
 
-// Delete a Menu Category
+// Delete a Menu Category for restaurant
   deleteMenuCategory(menuCat) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -58,7 +58,7 @@ export class RestProvider {
       .map(res => res.json());
   }
 
-  // create new restaurant
+  // create new restaurant for Restaurant
     createNewRestaurant(newRest) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -66,7 +66,7 @@ export class RestProvider {
         .map(res => res.json());
     }
 
-// Create New Menu Item
+// Create New Menu Item for Restaurant
 
   createNewMenuItem(newMenuItem) {
 
@@ -77,6 +77,7 @@ export class RestProvider {
       .map(res => res.json());
   }
 
+//for end users
   getRestMenuCategory() {
   //  console.log(this.auth.currentUser);
     var headers = new Headers();
@@ -84,7 +85,7 @@ export class RestProvider {
     return this.http.post(nodeserver+'/menuitem/servemenucat/59799c695119e91ea4ab113c',{ headers: headers })
       .map(res => res.json());
   }
-
+//for end users
   getRestMenuItems(passme){
   console.log("inside getRestMenuItems  : "+passme);
   var headers = new Headers();
@@ -93,7 +94,7 @@ export class RestProvider {
     .map(res => res.json());
 
   }
-
+//for end users
   placeNewOrder(Order){
   console.log("Inside PlaceNewOrder New Order"+ Order);
     var headers = new Headers();
@@ -101,12 +102,30 @@ export class RestProvider {
     return this.http.post(nodeserver+'/api/order/neworder/'+Order.restaurant_id, JSON.stringify(Order), { headers: headers })
       .map(res => res.json());
   }
-
+//for end users
   getUserOrders(username){
   console.log("Inside get user Order"+ username.id);
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(nodeserver+'/api/order/getmyorder/'+username.id, JSON.stringify(username), { headers: headers })
+      .map(res => res.json());
+  }
+//for end users
+  stopOrder(orderid){
+  console.log("Inside stop order"+ orderid.id);
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(nodeserver+'/api/order/stoporder/'+orderid.id, JSON.stringify(orderid), { headers: headers })
+      .map(res => res.json());
+  }
+
+  // get restaurant orders -- not paid  for Restaurant
+
+  getRestNotPaidOrders(restid){
+  console.log("Inside get user Order"+ restid.id);
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(nodeserver+'/api/order/getrestorder/'+restid.id, JSON.stringify(""), { headers: headers })
       .map(res => res.json());
   }
 

@@ -88,6 +88,8 @@ console.log("custom token : " + this.custom_token)
    return this.af.auth.currentUser?this.af.auth.currentUser.uid:null;
  }
 
+ 
+
 
  get currentUserName():string{
 

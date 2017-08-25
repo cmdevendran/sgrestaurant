@@ -86,6 +86,47 @@ loginForm: FormGroup;
     }
     }
 
+restid : any ;
+    restlogin(): void {
+          if(this.loginForm.valid) {
+
+            var credentials = ({email: this.email.value, password: this.password.value}); //Added next lines
+            this.auth.loginWithEmail(credentials).subscribe((data) => {
+          //  this.userName = data.email;
+            console.log("Within Login : "+ this.userName);
+            //this.npmauth.getAuthToken(this.auth.currentUser).subscribe((user)=>{
+          //  console.log(user.token);
+            //});
+            let uid = {
+            id : this.auth.currentUser
+            };
+            console.log("uid : "+uid);
+            this.npmauth.getRestIdForUser(uid).subscribe((rest)=>{
+            console.log(rest.restaurantid);
+            this.restid = rest.restaurantid;
+            });
+
+          this.navCtrl.setRoot(HomePage,this.restid);
+
+
+
+            },
+            (error) => {
+            console.log(error);
+
+            this.anyErrors = error;
+
+
+    },
+    () => {
+      console.log("completed");
+    });
+
+
+
+      }
+      }
+
     signUp(): void{
     this.navCtrl.setRoot(SignupPage);
     }

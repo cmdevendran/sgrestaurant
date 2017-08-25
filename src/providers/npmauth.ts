@@ -35,4 +35,13 @@ export class NpmauthProvider {
       }
   }
 
+  getRestIdForUser(uid){
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  if(uid){
+  return this.http.post(nodeserver+'/authenticate/rest/getuserrest/'+uid.id, JSON.stringify(uid),{headers:headers}).map(res=>res.json());
+  }
+
+  }
+
   }

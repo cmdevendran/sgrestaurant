@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HomePage} from '../home/home';
 import {OrderPage} from '../order/order';
+import {VieworderPage} from '../vieworder/vieworder';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import {AuthProvider} from '../../providers/auth/auth';
 import {AlertController} from 'ionic-angular';
@@ -49,6 +50,51 @@ myorders : any[];
 
    this.viewCtrl.dismiss();
  }
+
+ openOrder(order){
+     let profileModal = this.modalCtrl.create(VieworderPage, {order: order});
+     profileModal.present();
+     profileModal.onDidDismiss(data=>{
+
+     console.log(data);
+ });
+ }
+
+ stopOrder(myorder){
+ let confirm = this.alertCtrl.create({
+   title: 'HOLD ORDER?',
+   message: 'Do you want the stop the order and approach Restaurant staff : ',
+   buttons: [
+     {
+       text: 'No',
+       handler: () => {
+         console.log('Disagree clicked');
+       }
+     },
+     {
+       text: 'Yes',
+       handler: () => {
+         console.log('Agree clicked');
+         let order = {
+         id : myorder._id
+         };
+           this.restData.stopOrder(order).subscribe(data=>{
+           if(data.ok==1){
+           myorder.order_status="Hold";
+
+           }
+
+           console.log(order);
+           });
+       }
+     }
+   ]
+ });
+ confirm.present();
+
+ }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyordersPage');

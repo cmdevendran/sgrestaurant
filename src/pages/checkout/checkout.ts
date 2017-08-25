@@ -99,6 +99,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
  total_amount : this.totalAmount,
  createdby: this.auth.currentUser,
  createddate: "",
+ status:"ordered",
  lastmodifiedby: this.auth.currentUser,
  lastmodifieddate: "",
  orderdetails : this.a
@@ -106,12 +107,13 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
  this.restData.placeNewOrder(order).subscribe(data => {
  let alert = this.alertCtrl.create({
 
-   title: "NewOrder",
-   subTitle: "Order Created",
+   title: "Your Order is Placed",
+   subTitle: "Order No : " +data.order_number,
    buttons: ['OK']
  });
 
- alert.present();
+ //alert.present();
+   this.navCtrl.setRoot(HomePage);
 
 
 

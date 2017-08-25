@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import { MenuhomePage } from '../menuhome/menuhome';
@@ -11,8 +11,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, public auth: AuthProvider, private af: AngularFireAuth) {
+restid : any;
+  constructor(public navCtrl: NavController, navParams: NavParams, public auth: AuthProvider, private af: AngularFireAuth) {
 
 
   this.af.auth.onAuthStateChanged(function(user) {
