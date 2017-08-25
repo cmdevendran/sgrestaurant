@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
 import {AuthProvider} from '../../providers/auth/auth';
 import {AskProvider} from '../../providers/ask';
+import {ValidationProvider} from '../../providers/validation';
 import {AlertController} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
@@ -27,7 +28,8 @@ restname : string;
 private vmenuForm : FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder,
-    private restData: RestProvider, private alertController: AlertController, private auth: AuthProvider) {
+    private restData: RestProvider, private alertController: AlertController, private auth: AuthProvider,
+    private valProvider : ValidationProvider) {
     this.restData.getUserRestaurants().subscribe(data => {
       this.restid = data._id;
       this.restname = data.name;
@@ -61,12 +63,6 @@ this.menudatas.forEach((menudata) => { // foreach statement
     }
   });
 
-
-
-
-
-
-
     let alert = this.alertController.create({
 
       title: this.mitem ,
@@ -86,6 +82,8 @@ createMenuItem(){
         this.mitem = menudata.categoryname;
       }
     });
+var   price = this.valProvider.twoDecimals(this.vmenuForm.value.vmenuPrice);
+   //console.log("price " +price);
   let menucategory = {
         id: this.restid,
         catid : this.vmenuForm.value.vCatName,
@@ -94,7 +92,7 @@ createMenuItem(){
         menu_item_desc : this.vmenuForm.value.vmenuDesc,
         menu_item_img : "",
         addgst : this.vmenuForm.value.vmenuGST,
-        item_price : this.vmenuForm.value.vmenuPrice,
+        item_price : price,
         lastmodifiedby:this.auth.currentUser,
         menu_is_available : this.vmenuForm.value.vIsMenuAvailable
 
@@ -119,6 +117,5 @@ createMenuItem(){
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreatemenuitemPage');
   }
-
 
 }

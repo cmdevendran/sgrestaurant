@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, ModalController, ViewController } 
 import {AuthProvider} from '../../providers/auth/auth';
 import {AlertController} from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
+import {ValidationProvider} from '../../providers/validation'
 import 'rxjs/add/operator/map';
 
 
@@ -34,7 +35,7 @@ totalAmount = 0;
 
 constructor(public navCtrl: NavController, public navParams: NavParams,
   private restData: RestProvider, private alertCtrl : AlertController, private auth: AuthProvider,
-  public modalCtrl: ModalController, private viewCtrl : ViewController) {
+  public modalCtrl: ModalController, private viewCtrl : ViewController, private valProvider : ValidationProvider) {
 
   this.fromOrder = navParams.get('order');
   this.name = navParams.get('name');
@@ -96,7 +97,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
  let order ={
  name : this.name,
  restaurant_id : this.restid,
- total_amount : this.totalAmount,
+ total_amount : this.valProvider.twoDecimals(this.totalAmount),
  createdby: this.auth.currentUser,
  createddate: "",
  status:"ordered",

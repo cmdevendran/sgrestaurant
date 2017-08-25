@@ -27,7 +27,7 @@
     </ion-card-header>
       <ion-card-content>
 <div class="amount">
-      $ {{totalAmount}}
+      $ {{totalAmount.toFixed(2)}}
     </div>
     <!-- buttons should go here -->
     <button ion-button (click)="placeOrder()">Confirm</button>

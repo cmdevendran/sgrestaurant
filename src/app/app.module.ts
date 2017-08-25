@@ -28,6 +28,8 @@ import { OrderPage } from '../pages/order/order';
 import { MyordersPage } from '../pages/myorders/myorders';
 import {CheckoutPage} from '../pages/checkout/checkout';
 import {VieworderPage} from '../pages/vieworder/vieworder';
+import {ValidationProvider} from '../providers/validation';
+import { DecimalPipe } from "@angular/common";
 
 
 
@@ -83,7 +85,9 @@ import {VieworderPage} from '../pages/vieworder/vieworder';
     AuthProvider,
     RestProvider,
     AskProvider,
-    NpmauthProvider
+    NpmauthProvider,
+    ValidationProvider,
+    DecimalPipe
   ]
 })
 export class AppModule {}

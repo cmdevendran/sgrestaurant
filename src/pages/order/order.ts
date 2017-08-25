@@ -74,7 +74,7 @@ console.log("iddd "+_id);
 if(this.gotPrevData){
 console.log("inside gotprevdata");
 this.objNumber = this.gotPrevData;
-
+console.log(this.objNumber);
 }
 
 if (this.objNumber.hasOwnProperty(_id)  ) {
@@ -110,14 +110,17 @@ this.objNumber = this.gotPrevData;
 }
 
   if (this.objNumber.hasOwnProperty(_id)) {
-    console.log("object exist : " + _id);
+    console.log("decrement object exist : " + _id);
     var tempnumber = this.objNumber[_id];
     if (tempnumber > 0) {
       console.log(tempnumber);
       tempnumber--;
       console.log(tempnumber);
       this.objNumber[_id] = tempnumber;
-      console.log(this.objNumber[_id]);
+      console.log("within decrement " +this.objNumber[_id]);
+      if (tempnumber===0){
+        delete this.objNumber[_id];
+      }
     }
 
   }
