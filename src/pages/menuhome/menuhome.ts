@@ -69,7 +69,9 @@ menuitems : any[];
       catid: menuCate,
       id: this.restid
     }
-    let profileModal = this.modalCtrl.create(OrderPage, {restid : this.restid, name : this.restname, catid : menuCate , order : this.fromOrder});
+    let profileModal = this.modalCtrl.create(OrderPage, 
+      {restid : this.restid, name : this.restname, catid : menuCate , order : this.fromOrder},
+      {showBackdrop: false});
     profileModal.present();
     profileModal.onDidDismiss(data=>{
     this.fromOrder = data;

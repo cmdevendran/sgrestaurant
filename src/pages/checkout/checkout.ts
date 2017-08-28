@@ -97,7 +97,7 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
  let order ={
  name : this.name,
  restaurant_id : this.restid,
- total_amount : this.valProvider.twoDecimals(this.totalAmount),
+ total_amount : this.totalAmount,
  createdby: this.auth.currentUser,
  createddate: "",
  status:"ordered",
