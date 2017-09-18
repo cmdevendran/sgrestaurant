@@ -6,6 +6,7 @@ import { nodeserver } from '../env/environment';
 
 
 
+
 /*
 import {AuthProvider} from '../providers/auth/auth';
 
@@ -85,6 +86,15 @@ export class RestProvider {
     return this.http.post(nodeserver+'/menuitem/servemenucat/59799c695119e91ea4ab113c',{ headers: headers })
       .map(res => res.json());
   }
+// pass the restid and get all the restaurant details
+  getRestDetails(restid) {
+     console.log(restid);
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      return this.http.post(nodeserver+'/menuitem/serverest/'+restid,{ headers: headers })
+        .map(res => res.json());
+    }
+
 //for end users
   getRestMenuItems(passme){
   console.log("inside getRestMenuItems  : "+passme);

@@ -25,6 +25,7 @@ export class MenuhomePage {
 menudatas: any[];
 restid: string;
 restname : string;
+chargeGST : boolean;
 fromOrder : any ;
 orderItems = 0;
 vmenuitems : any[];
@@ -37,14 +38,18 @@ vmenuitems : any[];
 
     console.log("order itesm : "+this.orderItems);
       console.log("objNumber from menuhome : "+ navParams.get('objNumber'));
-  this.restData.getRestMenuCategory().subscribe(data => {
+      console.log("restid from form : "+navParams.get('id'));
+      this.restData. getRestDetails(navParams.get('id')).subscribe(data => {
+ // this.restData.getRestMenuCategory().subscribe(data => {
       this.restid = data._id;
       this.restname = data.name;
       this.menudatas = data.menucategory;
       this.vmenuitems = data.menuitem;
+      this.chargeGST = data.charge_gst;
       console.log(data);
       console.log("menudatas : "+this.menudatas);
       console.log("menuitems : "+this.vmenuitems);
+      console.log("change gst "  + data.charge_gst);
 
     });
 
@@ -85,7 +90,7 @@ menuitems : any[];
   checkOut(){
   console.log("triggering checkout..");
   if(this.fromOrder){
-  let profileModal = this.modalCtrl.create(CheckoutPage,  {restid : this.restid, menuitem :  this.vmenuitems, name : this.restname,  order : this.fromOrder});
+  let profileModal = this.modalCtrl.create(CheckoutPage,  {restid : this.restid, menuitem :  this.vmenuitems, name : this.restname,  order : this.fromOrder, chargeGST : this.chargeGST});
   profileModal.present();
   }else{
   this.presentToast();

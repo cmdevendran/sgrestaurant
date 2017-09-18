@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import {Nav, IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {OrderPage} from '../order/order';
-import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+
 import {AuthProvider} from '../../providers/auth/auth';
 import {AlertController} from 'ionic-angular';
 import {RestProvider} from '../../providers/restaurant';
@@ -11,9 +12,8 @@ import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the CheckoutPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
+ * Final place for user to place order
+ * 
  */
 @IonicPage()
 @Component({
@@ -21,7 +21,8 @@ import 'rxjs/add/operator/map';
   templateUrl: 'checkout.html',
 })
 export class CheckoutPage {
-
+  
+  @ViewChild(Nav) nav: Nav;
 
 menuitems :any;
 restid: string;
@@ -32,6 +33,8 @@ orderItems = 0;
 revisedOrder : any [];
 a=[];
 totalAmount = 0;
+chargeGST : boolean;
+gstamount : number;
 
 constructor(public navCtrl: NavController, public navParams: NavParams,
   private restData: RestProvider, private alertCtrl : AlertController, private auth: AuthProvider,
@@ -41,12 +44,14 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
   this.name = navParams.get('name');
   this.restid = navParams.get('restid');
   this.menuitems = navParams.get('menuitem');
+  this.chargeGST = navParams.get('chargeGST');
 
 
     console.log("name :"+this.name);
     console.log("restid :"+this.restid);
     console.log("order :"+this.fromOrder);
     console.log("menuitems:"+this.menuitems);
+    console.log("charge gst:"+this.chargeGST);
 
 
     for (var [key, value] of (<any>Object).entries(this.fromOrder)) {
@@ -58,6 +63,11 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
     this.a.push(tar[0]);
       console.log(this.a);
        console.log(key + ' ' + value); // "a 5", "b 7", "c 9"
+    }
+
+    if(this.chargeGST==true && this.totalAmount!=0 ){
+      console.log("within charge gust: "+ this.chargeGST);
+      this.gstamount = this.totalAmount - (this.totalAmount/1.07);
     }
 
 
@@ -114,17 +124,16 @@ constructor(public navCtrl: NavController, public navParams: NavParams,
  });
 
  //alert.present();
-   this.navCtrl.setRoot(HomePage);
+this.navCtrl.setRoot(HomePage);
+//this.viewCtrl.dismiss();
+this.navCtrl.goToRoot;
+ //this.navCtrl.popToRoot();
+ 
 
 
 
  });
  }
 
- decrement(){
 
- }
- increment(){
-
- }
 }

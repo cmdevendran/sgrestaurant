@@ -24,7 +24,7 @@
     <h3>Order Date : {{myorder.createddate}}</h3>
     <h3>Order No : {{myorder.order_number}}</h3>
     <h3>Restaurant Name : {{myorder.name}}</h3>
-    <h3>Amount Spent : {{myorder.total_amount}}</h3>
+    <h3>Amount Spent : {{myorder.total_amount.toFixed(2)}}</h3>
     <ion-badge >Status : {{myorder.order_status}} </ion-badge>
 
 <span  item-end *ngIf="myorder.order_status === 'ordered'">

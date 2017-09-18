@@ -26,6 +26,7 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
 import { MenuhomePage } from '../pages/menuhome/menuhome';
 import { OrderPage } from '../pages/order/order';
 import { MyordersPage } from '../pages/myorders/myorders';
+//import {CheckoutPage} from '../pages/checkout/checkout';
 import {CheckoutPage} from '../pages/checkout/checkout';
 import {VieworderPage} from '../pages/vieworder/vieworder';
 import {ValidationProvider} from '../providers/validation';

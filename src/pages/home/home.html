@@ -16,10 +16,12 @@
   <button ion-button>Scan QR Code </button><br>
 
   <br><br><br>
-
+  <ion-input placeholder="Restaurant ID" [(ngModel)]="vrestid"
+  name="vrestid" ngTrim=true maxlength="5"  pattern="[0-9]{6}"></ion-input>
   <input align-items: centre id="partitioned" type="number" maxlength="4" pattern="[0-9]"/>
 
   <div style="height:60px;"><br></div>
+  
 
   <table>
       <tr>
@@ -32,7 +34,8 @@
           </ion-input>
         </td>
         <td>
-          <ion-input type="text" #otp3 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="next(otp4)">
+          <ion-input type="text" #otp3 class="otp"  pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="next(otp4)">
+         
           </ion-input>
         </td>
         <td>
@@ -42,5 +45,5 @@
       </tr>
     </table>
 
-  <button ion-button (click)="getMenuCat()">Enter</button>
+  <button ion-button (click)="getMenuCat(vrestid)">Enter</button>
 </ion-content>

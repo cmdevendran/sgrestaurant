@@ -29,9 +29,13 @@
 <div class="amount">
       $ {{totalAmount.toFixed(2)}}
     </div>
+
+  <p *ngIf="chargeGST">GST Amount included : {{gstamount}} </p>
+
+<div>
     <!-- buttons should go here -->
     <button ion-button (click)="placeOrder()">Confirm</button>
-
+</div>
   </ion-card-content>
 </ion-card>
 

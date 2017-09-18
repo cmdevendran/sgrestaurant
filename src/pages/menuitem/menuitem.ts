@@ -31,6 +31,8 @@ export class MenuitemPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private restData: RestProvider, private alertController: AlertController, private viewCtrl : ViewController) {
     this.restData.getUserRestaurants().subscribe(data => {
+  
+     
       //  this.datas = data;
       this.restid = data._id;
       this.restname = data.name;
