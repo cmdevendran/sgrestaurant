@@ -5,6 +5,7 @@ import { LoginPage } from '../login/login';
 import { MenuhomePage } from '../menuhome/menuhome';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {RestProvider} from '../../providers/restaurant';
+import {EnterPinPage} from '../enter-pin/enter-pin';
 
 
 @Component({
@@ -12,13 +13,14 @@ import {RestProvider} from '../../providers/restaurant';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  EnterPinPage = EnterPinPage;
 restid : any;
   constructor(public navCtrl: NavController, navParams: NavParams, public auth: AuthProvider, private restData: RestProvider,private af: AngularFireAuth) {
 
 
   this.af.auth.onAuthStateChanged(function(user) {
   if (!user) {
-  this.navCtrl.setRoot(LoginPage);
+  //this.navCtrl.setRoot(LoginPage);
 
   } else {
 
@@ -43,10 +45,10 @@ next(el) {
 
     });*/
 
-  this.navCtrl.setRoot(MenuhomePage,{ id : vrestid});
-  console.log("restid from form : "+vrestid);
+  //this.navCtrl.setRoot(MenuhomePage,{ id : vrestid});
+  //console.log("restid from form : "+vrestid);
 
  
- //this.navCtrl.push(MenuhomePage,{myid : vrestid});
+
   }
 }

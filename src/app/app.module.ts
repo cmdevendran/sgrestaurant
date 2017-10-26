@@ -29,8 +29,15 @@ import { MyordersPage } from '../pages/myorders/myorders';
 //import {CheckoutPage} from '../pages/checkout/checkout';
 import {CheckoutPage} from '../pages/checkout/checkout';
 import {VieworderPage} from '../pages/vieworder/vieworder';
+import {TabsPage} from '../pages/tabs/tabs';
 import {ValidationProvider} from '../providers/validation';
 import { DecimalPipe } from "@angular/common";
+import {EnterPinPage} from '../pages/enter-pin/enter-pin';
+import { Keyboard } from '@ionic-native/keyboard';
+import { HotelPage } from "../pages/hotel/hotel";
+import { Hotel1Page } from "../pages/hotel1/hotel1";
+import { CartPage } from '../pages/cart/cart';
+import { DummyPage } from '../pages/dummy/dummy';
 
 
 
@@ -49,7 +56,14 @@ import { DecimalPipe } from "@angular/common";
     CheckoutPage,
     OrderPage,
     MyordersPage,
-    VieworderPage
+    VieworderPage,
+    TabsPage,
+    EnterPinPage,
+    HotelPage,
+    Hotel1Page,
+    DummyPage,
+    CartPage
+   
 
 
   ],
@@ -76,7 +90,13 @@ import { DecimalPipe } from "@angular/common";
     CheckoutPage,
     OrderPage,
     MyordersPage,
-    VieworderPage
+    VieworderPage,
+    TabsPage,
+    EnterPinPage,
+    HotelPage,
+    Hotel1Page,
+    CartPage,
+    DummyPage
 
   ],
   providers: [
@@ -88,6 +108,7 @@ import { DecimalPipe } from "@angular/common";
     AskProvider,
     NpmauthProvider,
     ValidationProvider,
+    Keyboard,
     DecimalPipe
   ]
 })

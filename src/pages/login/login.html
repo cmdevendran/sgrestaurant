@@ -3,7 +3,7 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
+
 <ion-header>
 
   <ion-navbar color="myred">
@@ -68,3 +68,44 @@
 
 
   </ion-content>
+-->
+<ion-content id="login">
+  <div class="container">
+    <h1> Welcome to Makan Heaven</h1>
+    <h2>
+      Food for thought. Easy way to order 
+      your food anywhere and anytime….
+    </h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <div class="form" margin>
+
+        <ion-list margin padding-top>
+          <ion-item>
+            <ion-icon name="mail" [ngClass]="{'light' : !Micon, 'secondary' : Micon}" item-start small></ion-icon>
+            <ion-input class="email" no-margin type="text" formControlName="email" placeholder="EMAIL" (focus)="Micon=true" (blur)="Micon=false"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-list margin-bottom margin-right margin-left>
+          <ion-item>
+            <ion-icon name="key" [ngClass]="{'light' : !Picon, 'secondary' : Picon}" item-start small></ion-icon>
+            <ion-input class="text" no-margin type="password" formControlName="password" placeholder="PASSWORD" (focus)="Picon=true"
+              (blur)="Picon=false"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div padding-bottom padding-left padding-right>
+          <button class="border" ion-button color="secondary" full (click)="login()">Login</button>
+        </div>
+        <div class="forget" padding (click)="signup()">
+          <a href="#">Forget Password?</a>
+        </div>
+      </div>
+    </form>
+      <footer text-center>
+        Don't have an account?
+        <a href="#">Register Here</a>
+      </footer>
+
+  </div>
+ 
+
+</ion-content>

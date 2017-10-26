@@ -4,7 +4,9 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 import { AuthProvider } from '../../providers/auth/auth';
 import {SignupPage} from '../signup/signup';
 import {HomePage} from '../home/home';
+import {TabsPage} from '../tabs/tabs';
 import {NpmauthProvider} from '../../providers/npmauth';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import {RegisterPage} from '../register/register';
 import { App, ViewController, Nav } from 'ionic-angular';
@@ -17,6 +19,7 @@ import { App, ViewController, Nav } from 'ionic-angular';
  */
 @IonicPage()
 @Component({
+  template: '<ion-nav #Nav [root]="rootPage"></ion-nav>',
   selector: 'page-login',
   templateUrl: 'login.html',
 })
@@ -25,7 +28,7 @@ export class LoginPage {
 
 @ViewChild(Nav) nav: Nav;
 
-rootPage: any = HomePage;
+rootPage: any = TabsPage;
 
 
 loginForm: FormGroup;
@@ -37,9 +40,22 @@ loginForm: FormGroup;
 
 
   constructor(public navCtrl: NavController, private fb: FormBuilder,
-              public auth: AuthProvider, public npmauth : NpmauthProvider
+              public auth: AuthProvider, public npmauth : NpmauthProvider,private af: AngularFireAuth
               ) {
-  console.log("Entering LoginPage....");
+  console.log("Entering LoginPage...."+ this.auth.currentUser);
+  /*this.af.auth.onAuthStateChanged(function(user) {
+    if (!user) {
+    this.navCtrl.setRoot(LoginPage);
+  
+    } else {
+  
+    console.log("user : "+user.uid);
+    this.setRoot(TabsPage);
+    }
+    });*/
+
+  
+  
 
 
   this.loginForm = this.fb.group({
@@ -64,9 +80,10 @@ loginForm: FormGroup;
         //  console.log(user.token);
           });
 
-          //this.navCtrl.setRoot(HomePage);
-        this.navCtrl.setRoot(HomePage);
-      //  this.navCtrl.pop();
+        
+       // this.navCtrl.setRoot(HomePage);
+       //this.navCtrl.push(TabsPage,this.restid);
+       this.navCtrl.setRoot(TabsPage,this.restid);
 
 
           },
@@ -106,7 +123,8 @@ restid : any ;
             this.restid = rest.restaurantid;
             });
 
-          this.navCtrl.setRoot(HomePage,this.restid);
+         // this.navCtrl.setRoot(HomePage,this.restid);
+        // this.navCtrl.push(TabsPage,this.restid);
 
 
 
@@ -139,6 +157,5 @@ restid : any ;
 
     }
 
-
-
+   
 }

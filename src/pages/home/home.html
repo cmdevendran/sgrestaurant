@@ -1,3 +1,4 @@
+<!--
 <ion-header>
   <ion-navbar color="myred">
     <button ion-button menuToggle>
@@ -47,3 +48,32 @@
 
   <button ion-button (click)="getMenuCat(vrestid)">Enter</button>
 </ion-content>
+-->
+<ion-header>
+    <ion-navbar text-center color="primary">
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding id="home">
+  
+    <section text-center>
+        <!-- <a href="#" [navPush]="QRCodePage"> -->
+        <a href="#" (click)="scanCode()">
+          <img src="assets/img/QR.png" alt="QR Code" />
+          <h2>Scan QR Code</h2>
+        </a>
+    </section>
+  
+    <section text-center>
+      <a href="#" [navPush]="EnterPinPage">
+        <img src="assets/img/Code.png" alt="Code" />
+        <h2>Enter Code</h2>
+      </a>
+    </section>
+    <div text-center>
+      <ion-icon name="heart-outline" color="pinky" item-start small></ion-icon>
+      <a href="#" (click)="fav()">View faviourite Restaurants</a>
+    </div>
+    
+  </ion-content>

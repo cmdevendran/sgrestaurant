@@ -22,7 +22,7 @@ export class ProfilePage {
 
 @ViewChild(Nav) nav: Nav;
 
-rootPage: any = HomePage;
+
 displayname : string;
 mobile : string;
 uid : string;
@@ -54,8 +54,9 @@ uid : string;
   }
 
   logout():void{
+    this.auth.logout();
   this.navCtrl.setRoot(LoginPage);
-  this.auth.logout();
+ 
 
 
 

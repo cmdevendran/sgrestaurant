@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button class="back-button" icon-only (click)="viewCtrl.dismiss()" >
+             
+          </button>
+      </ion-buttons>
+    <ion-title>CART</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content id="cart">
+  <ion-card *ngFor="let item of items; let i=index">
+      <ion-item>
+        <img class="item-img" [src]="item.img" alt="img" item-left/>
+        <h2>{{item.item_name}}</h2>
+        <span class="add" (click)="decrement(item)">
+        
+               <img src="assets/img/remove.png"/></span>
+          <span> {{objNumber[item._id]}}</span>
+          <span class="add" (click)="increment(item)">
+          <img src="assets/img/add.png"/></span>
+        
+        <span class="price">${{objNumber[item._id]*item.item_price}}</span>
+      </ion-item>
+  </ion-card>
+  <p>
+    <span>Grand Total</span>
+    <span>${{totalAmount}}</span>
+  </p>
+  <div class="place-order">
+      <button class="border" (click)="placeOrder()" ion-button color="secondary" full >PLACE ORDER</button>
+  </div>
+</ion-content>

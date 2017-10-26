@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <!-- <ion-navbar color="primary">
+    <ion-title color="light">Enter Pin</ion-title>
+  </ion-navbar> -->
+  <ion-toolbar color="primary">
+    <ion-buttons left >
+        <button class="close" ion-button icon-only (click)="gotoHome()">
+            <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Enter Pin</ion-title>
+</ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center padding>
+    <form (submit)="gotoHotel(vrestid)">
+      <p>Enter the code of Restaurent</p>
+    <!--  <input #numval margin-top id="partitioned" type="text" maxlength='5'[(ngModel)]="key" name="key"/> -->
+    <input #numval margin-top id="partitioned" type="text" maxlength='5' [(ngModel)]="vrestid"
+    name="vrestid"/>
+    <input type="button" (click)="submit">
+    
+      <!-- <input id="1" type="text" (change)="ValidatePassKey($event)" maxlength="1"/>
+      <input id="2" type="text" (change)="ValidatePassKey($event)" maxlength="1"/>
+      <input id="3" type="text" (change)="ValidatePassKey($event)" maxlength="1"/>
+      <input id="4" type="text" maxlength="4"> -->
+    </form>  
+    <!-- <p class="key">{{key}}</p> -->
+  </div>
+</ion-content>
+

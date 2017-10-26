@@ -10,6 +10,11 @@ import { ProfilePage } from '../pages/profile/profile';
 import { CreatemenuitemPage } from '../pages/createmenuitem/createmenuitem';
 import { MyordersPage } from '../pages/myorders/myorders';
 import { MenuitemPage } from '../pages/menuitem/menuitem';
+import {TabsPage} from '../pages/tabs/tabs';
+
+
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,15 +22,18 @@ import { MenuitemPage } from '../pages/menuitem/menuitem';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
+
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+            private af: AngularFireAuth) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'TabsPage', component: TabsPage},
       { title: 'Home', component: HomePage },
       { title: 'Profile', component: ProfilePage },
       { title: 'Login', component: LoginPage },
@@ -38,7 +46,26 @@ export class MyApp {
   }
 
   initializeApp() {
+
     this.platform.ready().then(() => {
+
+      this.af.auth.onAuthStateChanged(function(user) {
+        if (!user) {
+        //  this.rootPage = LoginPage;
+     
+      
+        } else {
+      
+        console.log("user component : "+user.uid);
+       
+        /*this.nav.setRoot(TabsPage).then(()=>{
+          this.nav.popToRoot();
+          }).catch(err=>{
+          alert(err.toString());
+          });*/
+    
+        }
+        });
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

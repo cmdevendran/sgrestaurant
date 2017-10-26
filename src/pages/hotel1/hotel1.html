@@ -1,0 +1,88 @@
+<!-->Restaurant front Page */-->
+
+<ion-header hide-tabs>
+
+  <ion-navbar color="primary">
+      <ion-buttons left>
+          <button ion-button class="back-button" icon-only (click)="viewCtrl.dismiss()" >
+             
+          </button>
+      </ion-buttons>
+    <ion-title>{{restname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+  <!--<ion-content (ionScroll)="scrollHandler($event)">-->
+      <ion-content >
+ 
+  <img src="assets/img/mc.jpg" alt="MC" class="hotel-image" />
+  <!--
+    <div [hidden]="booking">
+      <chooses (Booking)="booking=$event"></chooses>
+    </div>-->
+    <div>
+    <ion-toolbar>
+  <ion-segment [(ngModel)]="categories" >
+    <ion-segment-button *ngFor="let menudata of menudatas; let i=index" value={{menudata._id}} (click)="getMenuList(menudata._id)">{{menudata.categoryname}}
+      <!--  <img src="assets/img/hotdrink16.png"/> 
+              <div class="myred"  (click)="getMenuItem(menudata._id)">  {{menudata.categoryname}} </div>
+        -->
+    </ion-segment-button>
+  </ion-segment>
+    </ion-toolbar>
+  </div>
+    <!--
+      <ion-card *ngFor="let item of items; let i=index">
+        <ion-item>
+          <img class="item-img" [src]="item.img" alt="img" item-left/>
+          <h2 class="name">{{item.name}}</h2>
+          <a href="#" *ngIf="item.custom" class="custom" (click)="custom()">Customize</a>
+          <a href="#" class="add">
+            <span>Add </span>
+            <img src="assets/img/add.png"/>
+            <span class="price">${{item.price}}</span>
+          </a>
+        </ion-item>
+      </ion-card>
+  -->
+  <div>
+  <ion-card *ngFor="let menuitem of consMenuitem">
+      <ion-scroll scrollY="true"> 
+    <ion-item>
+        
+        <h2 class="name"> {{menuitem.item_name}}</h2>
+        <a href="#" *ngIf="menuitem.custom" class="custom" (click)="custom()">Customize</a>
+        <div class="add" (click)="addOrder(menuitem)">
+          <span>Add </span>
+          <img src="assets/img/add.png" />
+          <span class="price" type=number>${{menuitem.item_price | number:'1.2-2'}}</span>
+        </div>
+
+    </ion-item>
+      </ion-scroll>
+  </ion-card>
+</div>
+   <!-- 
+    <ion-list>
+        <ion-item *ngFor="let menuitem of consMenuitem">
+
+          <div class="listText">
+          {{menuitem.item_name}} </div>
+          <div class="listText">{{menuitem.menu_item_desc}}</div>
+            <div class="listText">{{menuitem.item_price | number:'1.2-2'}}</div>
+ 
+        </ion-item>
+      </ion-list>
+  -->
+
+    <div class="cart">
+      <div >
+        <span>{{selectedItems.length}} items</span>
+        <span>${{totalamount}}</span>
+      </div>
+      <button (click)="goCart()">VIEW CART</button>
+    </div>
+
+</ion-content>

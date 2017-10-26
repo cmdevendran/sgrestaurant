@@ -1,3 +1,91 @@
 page-login {
-
-}
+    #login {
+        background-image: url("../assets/img/login-bg.jpeg");
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        font-family: 'Raleway', sans-serif;
+       
+        // .container {
+        //     width: 100%;
+        //     height: 100%;
+        //     margin: 0;
+        //     opacity: 10%;
+        // }
+        h1 {
+            color: #ffffff;
+            font-size: 30pt;
+            margin: 10pt 0 5pt 10pt;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 12pt;
+            margin: 5pt 0 30% 10pt;
+            color: #ffffff;
+            font-weight: 100;
+        }
+        .text {
+            font-size: 12px;
+        }
+        .border {
+            border-radius: 3px;
+        }
+        .forget {
+            position: relative;
+        }
+        .forget > a {
+            position: absolute;
+            right: 20px;
+            color: color($colors, light);
+            text-decoration: none;
+            bottom: 15px;
+        }
+        // ion-item.input-has-focus ion-label[floating] ion-icon,
+        // ion-item.input-has-value ion-label[floating] ion-icon {
+        //     display: none;
+        // }
+    
+        // .item-inner {
+        //     margin: 0;
+        // }
+        footer {
+            color: #f5cde5;
+            font-size: 14px;
+            padding: 8% 8% 0 8%;
+        }
+        footer > a {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+        .form {
+            background: color($colors, clean);
+            border-radius: 3px;
+        }
+        // .list-ios > .item-block:first-child {
+        //     border-width: 0;
+        // }
+        // .list-ios > .item-block:last-child {
+        //     border-bottom: 0.55px solid #c8c7cc
+        // }
+    
+        .list-ios > .item-block:first-child {
+            border-top: none;
+        }
+        .light {
+            color: color($colors, light);
+        }
+        .secondary {
+            color: color($colors, secondary);
+        }
+    }
+    #login:after {
+        content: "";
+        display: block;
+        background: linear-gradient(-180deg, #31516F 24%, #131F30 100%);
+        opacity: 0.9;
+        width: 100%;
+        height: 100%;
+        filter: blur(1px);
+    }
+    }
+    

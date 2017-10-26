@@ -1,0 +1,123 @@
+page-hotel {
+    
+        .hotel-image {
+            width: 100%;
+            height: 30%;
+            display: block;
+        }
+        .cart {
+            left: 0;
+            bottom: 0px;
+            position: fixed;
+            z-index: 10;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            opacity: 1;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .cart > div {
+            width: 35%;
+            padding: 2%;
+            background: #2cd456;
+        }
+        .cart > div > span {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .cart > button {
+            width: 65%;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 700;
+            background: color($colors, secondary);
+        }
+        .fixed-header {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 56px;
+            border-top: 0;
+            background: #ffffff;
+          }
+          .booking {
+            margin-bottom: 0px;
+        }
+        .booking > div > h1 {
+            color: #A3A2A2;
+            font-size: 16px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .booking > div > span {
+            width: 100%;
+            border-bottom: 1px solid #DADADA;
+            display: inherit;
+        }
+        .booking > div > span .highlight {
+            width: 20%;
+            border-bottom: 2px solid #F34545;
+            display: inherit;
+        }
+        .take {
+            border-bottom: 1px solid #DADADA;
+            width: 100%;
+            text-decoration: none;
+            padding: 12px 16px 8px 16px;
+            display: block;
+        }
+        .take > span {
+            color: color($colors, dark);;
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;  
+            text-transform: uppercase;
+        }
+        .take-icon {
+            font-size: 26px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .checked {
+            font-size: 26px;
+            vertical-align: middle;
+            float: right;
+            font-weight: 600;
+        }
+        @-webkit-keyframes slideDownSmooth {
+            0% {
+                -webkit-transform: translate3d(-100%,0,0);
+            }
+            100% {
+                -webkit-transform: translate3d(0,0,0);
+            }
+        }
+        .dine-in {
+            border: 1px solid #F3F2F2;
+            background-color: #F3F2F2;
+            margin: 0 10px 0 12px;
+            -webkit-animation: slideDownSmooth ease 1;
+            animation: slideDownSmooth ease 1;
+            -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards;
+            -webkit-animation-duration: 750ms;
+            animation-duration: 750ms;
+        }
+        .table-choose {
+            font-size: 14px;
+            background-color: #F3F2F2;
+            padding: 0px;
+        }
+        .dine-in > div:first-child {
+            margin: 10px 16px 10px 16px;
+        }
+        .border {
+            border-radius: 4px;
+        }
+    }
