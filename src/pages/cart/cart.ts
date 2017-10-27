@@ -67,13 +67,28 @@ console.log(this.items);
         this.totalAmount = this.totalAmount+value*tar[0].item_price*1;
         console.log("total amount : "+this.totalAmount);
       console.log("dsfds "+JSON.stringify(tar) );
-      tar[0].order = value;
+      //tar[0].order = value;
     
-      //console.log(tar[0]);
-      this.a.push(tar[0]);
-      //  console.log(this.a);
-        // console.log(key + ' ' + value); // "a 5", "b 7", "c 9"
+    
+     // this.a.push(tar[0]);
+
       }
+    }
+
+    calcOrderDetails(){
+      for (var [key, value] of (<any>Object).entries(this.objNumber)) {
+        console.log("value from calc : "+ key +" : "+value);
+        var tar =  this.items.filter(function(v){ return v["_id"] == key;
+          });
+         // this.totalAmount = this.totalAmount+value*tar[0].item_price*1;
+          //console.log("total amount : "+this.totalAmount);
+        console.log("dsfds "+JSON.stringify(tar) );
+        tar[0].order = value;
+      
+      
+       this.a.push(tar[0]);
+  
+        }
     }
   
     checkGST(){
@@ -85,6 +100,7 @@ console.log(this.items);
     }
 
     placeOrder(){
+      this.calcOrderDetails();
       let order ={
       name : this.name,
       restaurant_id : this.restid,

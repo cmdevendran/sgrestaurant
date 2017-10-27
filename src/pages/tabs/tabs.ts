@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 //import MyordersPage from '../myorders/myorders';
-import dPage from '../profile/profile';
+import dPage, { ProfilePage } from '../profile/profile';
 import {HomePage} from '../home/home';
 import { DummyPage } from '../dummy/dummy';
 import { AuthProvider } from '../../providers/auth/auth';
@@ -26,7 +26,8 @@ import { MyordersPage } from '../myorders/myorders';
 export class TabsPage {
   tab1Root=HomePage;
   tab2Root = MyordersPage;
-  tab3Root = DummyPage;
+ // tab3Root = DummyPage;
+ tab3Root = ProfilePage;
 
   constructor(public navCtrl: NavController, navParams: NavParams, public auth: AuthProvider, private restData: RestProvider,private af: AngularFireAuth) {
    // this.tab2Root = MyordersPage;
