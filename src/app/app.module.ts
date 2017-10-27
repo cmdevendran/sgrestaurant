@@ -38,6 +38,7 @@ import { HotelPage } from "../pages/hotel/hotel";
 import { Hotel1Page } from "../pages/hotel1/hotel1";
 import { CartPage } from '../pages/cart/cart';
 import { DummyPage } from '../pages/dummy/dummy';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
 
@@ -96,6 +97,7 @@ import { DummyPage } from '../pages/dummy/dummy';
     HotelPage,
     Hotel1Page,
     CartPage,
+
     DummyPage
 
   ],
@@ -109,6 +111,7 @@ import { DummyPage } from '../pages/dummy/dummy';
     NpmauthProvider,
     ValidationProvider,
     Keyboard,
+    BarcodeScanner,
     DecimalPipe
   ]
 })

@@ -8,5 +8,8 @@ apiKey: "AIzaSyBfRFP5s4V6F5IRMGDP-aFpk8MgLM1Xz08",
 };
 /*
 export const nodeserver = "http://simplyorder.cleverapps.io";
+ export const nodeserver = "https://sgrestaurant-server.herokuapp.com/"
+ export const nodeserver = "http://localhost:8080";
 */
-export const nodeserver = "http://localhost:8080";
+export const nodeserver = "https://sgrestaurant-server.herokuapp.com";
+//export const nodeserver = "http://localhost:5000"

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams, ModalController} from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import { MenuhomePage } from '../menuhome/menuhome';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {RestProvider} from '../../providers/restaurant';
 import {EnterPinPage} from '../enter-pin/enter-pin';
+//import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
+import { Hotel1Page } from '../hotel1/hotel1';
 
 
 @Component({
@@ -13,9 +16,16 @@ import {EnterPinPage} from '../enter-pin/enter-pin';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
   EnterPinPage = EnterPinPage;
 restid : any;
-  constructor(public navCtrl: NavController, navParams: NavParams, public auth: AuthProvider, private restData: RestProvider,private af: AngularFireAuth) {
+scanData : {};
+encodeData : string ;
+encodedData : {} ;
+options : BarcodeScannerOptions;
+
+  constructor(public navCtrl: NavController, navParams: NavParams, public auth: AuthProvider, 
+    private restData: RestProvider,private af: AngularFireAuth,private barcodeScanner: BarcodeScanner, private modalCtrl : ModalController) {
 
 
   this.af.auth.onAuthStateChanged(function(user) {
@@ -51,4 +61,28 @@ next(el) {
  
 
   }
+
+  scanCode(){
+    this.options = {
+        prompt : "Scan Restaurant Barcode "
+    }
+    this.barcodeScanner.scan(this.options).then((barcodeData) => {
+
+        console.log(barcodeData);
+        this.scanData = barcodeData;
+       // this.scanData = "1001";
+
+        this.presentProfileModal(barcodeData.text);
+    }, (err) => {
+        console.log("Error occured : " + err);
+    });
+}
+
+presentProfileModal(id1) {
+  const profileModal = this.modalCtrl.create(Hotel1Page, { id : id1});
+  console.log("id1 : "+id1);
+  profileModal.present();
+}
+
+
 }
