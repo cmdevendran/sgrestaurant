@@ -39,6 +39,7 @@ import { Hotel1Page } from "../pages/hotel1/hotel1";
 import { CartPage } from '../pages/cart/cart';
 import { DummyPage } from '../pages/dummy/dummy';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { UserRegisterPage } from '../pages/user-register/user-register';
 
 
 
@@ -62,6 +63,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     EnterPinPage,
     HotelPage,
     Hotel1Page,
+    UserRegisterPage,
     DummyPage,
     CartPage
    
@@ -96,6 +98,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     EnterPinPage,
     HotelPage,
     Hotel1Page,
+    UserRegisterPage,
     CartPage,
 
     DummyPage

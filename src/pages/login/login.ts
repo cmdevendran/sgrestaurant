@@ -10,6 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import {RegisterPage} from '../register/register';
 import { App, ViewController, Nav } from 'ionic-angular';
+import { UserRegisterPage } from '../user-register/user-register';
 
 /**
  * Generated class for the LoginPage page.
@@ -145,9 +146,13 @@ restid : any ;
       }
       }
 
-    signUp(): void{
-    this.navCtrl.setRoot(SignupPage);
+    registerup(): void{
+    //this.navCtrl.setRoot(SignupPage);
+    this.navCtrl.push(UserRegisterPage);
+    //this.navCtrl.popTo(UserRegisterPage)
     }
+
+    
 
     register(): void{
     this.navCtrl.setRoot(RegisterPage);

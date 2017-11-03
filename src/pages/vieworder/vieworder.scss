@@ -36,7 +36,15 @@ page-vieworder {
           font-size: 2.5em;
           font-weight: bold;
         }
+        ion-scroll {
+          height: 100px;
+          }
+          
+              .back-button{
+                  display: block!important
+              }
 
 
 
 }
+

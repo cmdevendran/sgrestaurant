@@ -40,6 +40,18 @@ page-login {
             text-decoration: none;
             bottom: 15px;
         }
+
+        .register {
+            font-family: 'Raleway', sans-serif;
+            position: relative;
+        }
+        .register > a {
+            position: absolute;
+            right: 20px;
+           
+            text-decoration: none;
+            bottom: 15px;
+        }
         // ion-item.input-has-focus ion-label[floating] ion-icon,
         // ion-item.input-has-value ion-label[floating] ion-icon {
         //     display: none;

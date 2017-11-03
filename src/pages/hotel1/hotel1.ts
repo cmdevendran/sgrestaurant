@@ -72,7 +72,7 @@ consMenuitem = [];
 
     this.consMenuitem = [];
     this.vmenuitems.forEach(element => {
-      if(element.catid===menucat)
+      if(element.catid===menucat && element.is_item_available==true)
 
       this.consMenuitem.push(element);
     

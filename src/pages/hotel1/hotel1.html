@@ -24,6 +24,7 @@
     </div>-->
     <div>
     <ion-toolbar>
+      <!-- MENU CATEGORIES -->
   <ion-segment [(ngModel)]="categories" >
     <ion-segment-button *ngFor="let menudata of menudatas; let i=index" value={{menudata._id}} (click)="getMenuList(menudata._id)">{{menudata.categoryname}}
       <!--  <img src="assets/img/hotdrink16.png"/> 
@@ -47,6 +48,7 @@
         </ion-item>
       </ion-card>
   -->
+  <!-- MENU ITEMS -->
   <div>
   <ion-card *ngFor="let menuitem of consMenuitem">
       <ion-scroll scrollY="true"> 
