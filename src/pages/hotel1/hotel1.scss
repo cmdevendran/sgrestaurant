@@ -177,6 +177,24 @@ page-hotel1 {
             -webkit-animation-duration: 750ms;
             animation-duration: 750ms;
         }
+
+        ion-segment {
+            justify-content: space-between;
+            overflow: auto;
+            
+        
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+                display: none;
+            }
+        ion-segment-button.segment-button {
+            display: inline-block!important;
+            min-width: 100px!important;
+            width: auto!important;
+          }
+        }
+       
         ion-scroll {
             height: 100px;
             }
@@ -184,5 +202,5 @@ page-hotel1 {
                 .back-button{
                     display: block!important
                 }
-           
+        
     }

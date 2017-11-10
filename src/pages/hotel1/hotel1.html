@@ -23,16 +23,22 @@
       <chooses (Booking)="booking=$event"></chooses>
     </div>-->
     <div>
-    <ion-toolbar>
+
+<ion-toolbar>
       <!-- MENU CATEGORIES -->
+     
   <ion-segment [(ngModel)]="categories" >
+      
     <ion-segment-button *ngFor="let menudata of menudatas; let i=index" value={{menudata._id}} (click)="getMenuList(menudata._id)">{{menudata.categoryname}}
       <!--  <img src="assets/img/hotdrink16.png"/> 
               <div class="myred"  (click)="getMenuItem(menudata._id)">  {{menudata.categoryname}} </div>
         -->
     </ion-segment-button>
+  
   </ion-segment>
-    </ion-toolbar>
+
+</ion-toolbar>
+ 
   </div>
     <!--
       <ion-card *ngFor="let item of items; let i=index">
