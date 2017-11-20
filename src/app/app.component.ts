@@ -14,7 +14,7 @@ import {TabsPage} from '../pages/tabs/tabs';
 
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { UserRegisterPage } from '../pages/user-register/user-register';
+
 
 
 @Component({
@@ -41,7 +41,7 @@ export class MyApp {
       { title: 'Menu categoryname', component: MenuitemPage},
       { title: 'Menu Items', component: CreatemenuitemPage},
         { title: 'My Orders', component: MyordersPage},
-        { title: 'UserRegister', component: UserRegisterPage}
+       
 
     ];
 

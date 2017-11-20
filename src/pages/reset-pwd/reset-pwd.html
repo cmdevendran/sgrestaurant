@@ -1,0 +1,32 @@
+
+<ion-header hide-tabs>
+    <ion-toolbar color="primary">
+      <ion-buttons left >
+        <button class="back" ion-button icon-only (click)="gotoHome()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+        <ion-title>Reset Password</ion-title>
+    </ion-toolbar>
+    
+    </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <p text-center margin>
+      Please enter your registered email address. We'll send you the password reset instruction.
+    </p>
+    <ion-list margin>
+        <ion-item>
+          <!-- <ion-icon class="icon-size" name="mail" [ngClass]="{'light' : !Micon, 'secondary' : Micon}" item-start></ion-icon> -->
+          <ion-input class="text" no-margin type="text" placeholder="EMAIL ADDRESS" (focus)="Micon=true" (blur)="Micon=false"></ion-input>
+        </ion-item>
+      </ion-list>
+    <div class="cart">
+        
+        <button (click)="changePwd()">continue</button>
+      </div>
+  
+  </ion-content>
+  

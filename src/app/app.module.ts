@@ -39,7 +39,10 @@ import { Hotel1Page } from "../pages/hotel1/hotel1";
 import { CartPage } from '../pages/cart/cart';
 import { DummyPage } from '../pages/dummy/dummy';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { UserRegisterPage } from '../pages/user-register/user-register';
+
+import { ResetPwdPage } from '../pages/reset-pwd/reset-pwd';
+import { ChangePwdPage } from '../pages/change-pwd/change-pwd';
+import { FavResPage } from '../pages/fav-res/fav-res';
 
 
 
@@ -63,8 +66,12 @@ import { UserRegisterPage } from '../pages/user-register/user-register';
     EnterPinPage,
     HotelPage,
     Hotel1Page,
-    UserRegisterPage,
+
     DummyPage,
+    ResetPwdPage,
+    ChangePwdPage,
+    FavResPage,
+
     CartPage
    
 
@@ -98,8 +105,11 @@ import { UserRegisterPage } from '../pages/user-register/user-register';
     EnterPinPage,
     HotelPage,
     Hotel1Page,
-    UserRegisterPage,
+
+    ResetPwdPage,
+    ChangePwdPage,
     CartPage,
+    FavResPage,
 
     DummyPage
 

@@ -10,7 +10,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import {RegisterPage} from '../register/register';
 import { App, ViewController, Nav } from 'ionic-angular';
-import { UserRegisterPage } from '../user-register/user-register';
+
+import { ChangePwdPage } from '../change-pwd/change-pwd';
+import { ResetPwdPage } from '../reset-pwd/reset-pwd';
 
 /**
  * Generated class for the LoginPage page.
@@ -146,20 +148,21 @@ restid : any ;
       }
       }
 
-    registerup(): void{
-    //this.navCtrl.setRoot(SignupPage);
-    this.navCtrl.push(UserRegisterPage);
-    //this.navCtrl.popTo(UserRegisterPage)
-    }
+
 
     
 
     register(): void{
-    this.navCtrl.setRoot(RegisterPage);
+    //this.navCtrl.setRoot(UserRegisterPage);
+    this.navCtrl.push(SignupPage);
     }
 
     getToken():void{
 
+    }
+
+    forgotPassword(): void{
+      this.navCtrl.push(ResetPwdPage);
     }
 
    

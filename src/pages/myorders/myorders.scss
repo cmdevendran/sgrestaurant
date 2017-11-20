@@ -1,3 +1,121 @@
 page-myorders {
+    #myorder {
+        background-color: #f2f2f2;
+        .item {
+            padding: 8px 8px 8px 8px;
+        }
+        .item-store-order {
+            border-bottom: 1px solid #dad8d8;
+            float: left;
+        }
+        .item-store {
+            border-bottom: 1px solid #dad8d8;
+            width: 68%;
+            float: left;
+            margin-left: 6px;
+        }
+        .item-img {
+            width: 30%;
+            float: left;
+            margin: 0px;
+        }
+        .name {
+            display: inline;
+            font-size: 18px;
+            margin : 2px 0 2px 0;
+        }
+        .price {
+            float: right;
+            font-weight: 600;
+            font-size: 18px;
+            color: rgb(196, 66, 66);
+        }
+        .date {
+            display: inline-block;
+            font-size: 14px;
+            color: #929191;
+            margin : 6px 0 8px 2px;
+        }
+        .status {
+            float: right;
+            font-weight: 600;
+            font-size: 16px;
+            color: #02911a;
+            margin: 4px 0 4px 0;
+        }
+        .item-order {
+            width: 68%;
+            float: left;
+            margin-left: 6px;
+            margin-bottom: 6px;
+        }
+        .item-order h2 {
+            display: inline-block;
+            font-size: 17px;
+            margin: 6px 0 2px 2px;
+        }
+        .item-order span {
+            float: right;
+            font-weight: 600;
+            font-size: 18px;
+            margin: 6px 4px 0px 0;
+        }
+        .order-list {
+            width: 100%;
+            display: inline-block;
+        }
+        .order-icons {
+            width: 30%;
+            float: left;
+            margin: 8px 0 0 0;
+        }
+        .order-icons span:first-child {
+            
+            background-color: #3dbe02;
+            
+        }
+        .order-icons span:nth-child(2) {
+            background-color: #07d8d8;
+        }
+        .order-icons span:nth-child(3) {
+            padding: 12px 8px;
+            background-color: #7a07d8;
+            float: left;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+        .order-icons span {
+            margin-left: 2px;
+            float: left;
+            padding: 20px 15px;
+        }
+        .order-name {
+            width: 68%;
+            float: left;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 8px 0 0 0;
+                float: left;
+              }
+              
+              li {
+                padding-left: 6px; 
+                display: inline;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            
+            li::before {
+                content: "•";
+                color: rgb(202, 7, 7); 
+                font-size: 18px;
+                padding: 2px;
+              }
+        }
+    }
 
 }
+

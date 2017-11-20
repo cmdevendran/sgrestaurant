@@ -9,6 +9,7 @@ import {EnterPinPage} from '../enter-pin/enter-pin';
 //import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner';
 import { Hotel1Page } from '../hotel1/hotel1';
+import { FavResPage } from '../fav-res/fav-res';
 
 
 @Component({
@@ -82,6 +83,10 @@ presentProfileModal(id1) {
   const profileModal = this.modalCtrl.create(Hotel1Page, { id : id1});
   console.log("id1 : "+id1);
   profileModal.present();
+}
+
+fav(){
+  this.navCtrl.push(FavResPage);
 }
 
 

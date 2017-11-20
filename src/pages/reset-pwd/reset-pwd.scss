@@ -1,0 +1,48 @@
+page-reset-pwd {
+    .back {
+        margin-left: 5px;
+    }
+    p {
+        font-size: 16px;
+        color: color($colors, light);
+        margin-top: 22px !important;
+    }
+    .light {
+        color: color($colors, light);
+    }
+    .secondary {
+        color: color($colors, secondary);
+    }
+    .list-ios > .item-block:first-child {
+        border-top: none;
+    }
+    .text {
+        font-size: 16px;
+    }
+    .icon-size {
+        font-size: 30px;
+    }
+    .cart {
+        left: 0;
+        bottom: 0px;
+        position: fixed;
+        z-index: 10;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        opacity: 1;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .cart > button {
+        width: 100%;
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 400;
+        background: color($colors, secondary);
+        padding: 14px;
+        text-transform: uppercase;
+    }
+}

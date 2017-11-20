@@ -1,0 +1,34 @@
+
+<ion-header hide-tabs>
+    <ion-toolbar color="primary">
+      <ion-buttons left >
+        <button class="back" ion-button icon-only (click)="gotoHome()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+        <ion-title>Change Password</ion-title>
+    </ion-toolbar>
+    
+    </ion-header>
+  
+  
+  <ion-content padding>
+  
+  
+      <ion-list margin>
+        <ion-item>
+          <ion-input class="text" no-margin type="password" placeholder="New Password"></ion-input>
+        </ion-item>
+        </ion-list>
+      <ion-list margin>
+        <ion-item>
+          <ion-input class="text" no-margin type="password" placeholder="Confirm Password" ></ion-input>
+        </ion-item>
+      </ion-list>
+    <div class="cart">
+        
+        <button (click)="changePwd()">change password</button>
+      </div>
+  
+  </ion-content>
+  

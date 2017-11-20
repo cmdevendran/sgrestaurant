@@ -21,7 +21,7 @@
     </ion-navbar>
   
   </ion-header>
-
+<!--
 
 <ion-content padding>
 
@@ -39,5 +39,51 @@
 
     </ion-item>
   </ion-list>
+
+</ion-content>
+-->
+<ion-content  id="myorder">
+<ion-card *ngFor="let item of myorders; let i=index" (click)="openOrder(item)">
+  <div class="item">
+    <div class="item-store-order">
+      <img class="item-img" [src]="item.img" alt="img" item-left/>
+      <div class="item-store">
+        <div>
+            <h2 class="name">{{item.name}}</h2>
+            <span class="price">${{item.total_amount.toFixed(2)}}</span>
+        </div>
+        <div>
+            <h2 class="date">{{item.createddate}}</h2>
+            <span class="status">SUCCESS</span>
+        </div>
+      </div>
+      <div class="item-order">
+          <div>
+              <h2>Order Id:</h2>
+              <span>{{item.order_number}}</span>
+          </div>
+          <div>
+              <h2>Delivery By:</h2>
+              <span>Dine-in</span>
+          </div>
+        </div>
+    </div>
+    <div class="order-list">
+      <div class="order-icons">
+        <span></span>
+        <span></span>
+        <span>{{item.OrderDetails.length}}</span>
+      </div>
+      <div class="order-name">
+        
+        <ul *ngFor="let it of item.OrderDetails; let i=index">
+          <li  >{{it.item_name}}</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</ion-card>
+
 
 </ion-content>
