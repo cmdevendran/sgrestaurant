@@ -3,44 +3,44 @@
 <ion-header hide-tabs>
 
   <ion-navbar color="primary">
-      <ion-buttons left>
-          <button ion-button class="back-button" icon-only (click)="viewCtrl.dismiss()" >
-             
-          </button>
-      </ion-buttons>
+    <ion-buttons left>
+      <button ion-button class="back-button" icon-only (click)="viewCtrl.dismiss()">
+
+      </button>
+    </ion-buttons>
     <ion-title>{{restname}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-  <!--<ion-content (ionScroll)="scrollHandler($event)">-->
-      <ion-content >
- 
+<!--<ion-content (ionScroll)="scrollHandler($event)">-->
+<ion-content>
+
   <img src="assets/img/mc.jpg" alt="MC" class="hotel-image" />
   <!--
     <div [hidden]="booking">
       <chooses (Booking)="booking=$event"></chooses>
     </div>-->
-    <div>
+  <div>
 
-<ion-toolbar>
+    <ion-toolbar>
       <!-- MENU CATEGORIES -->
-     
-  <ion-segment [(ngModel)]="categories" >
-      
-    <ion-segment-button *ngFor="let menudata of menudatas; let i=index" value={{menudata._id}} (click)="getMenuList(menudata._id)">{{menudata.categoryname}}
-      <!--  <img src="assets/img/hotdrink16.png"/> 
+
+      <ion-segment [(ngModel)]="categories">
+
+        <ion-segment-button *ngFor="let menudata of menudatas; let i=index" value={{menudata._id}} (click)="getMenuList(menudata._id)">{{menudata.categoryname}}
+          <!--  <img src="assets/img/hotdrink16.png"/> 
               <div class="myred"  (click)="getMenuItem(menudata._id)">  {{menudata.categoryname}} </div>
         -->
-    </ion-segment-button>
-  
-  </ion-segment>
+        </ion-segment-button>
 
-</ion-toolbar>
- 
+      </ion-segment>
+
+    </ion-toolbar>
+
   </div>
-    <!--
+  <!--
       <ion-card *ngFor="let item of items; let i=index">
         <ion-item>
           <img class="item-img" [src]="item.img" alt="img" item-left/>
@@ -53,26 +53,34 @@
           </a>
         </ion-item>
       </ion-card>
+       <ion-scroll scrollY="true">
   -->
   <!-- MENU ITEMS -->
-  <div>
-  <ion-card *ngFor="let menuitem of consMenuitem">
-      <ion-scroll scrollY="true"> 
-    <ion-item>
-        
-        <h2 class="name"> {{menuitem.item_name}}</h2>
-        <a href="#" *ngIf="menuitem.custom" class="custom" (click)="custom()">Customize</a>
-        <div class="add" (click)="addOrder(menuitem)">
-          <span>Add </span>
-          <img src="assets/img/add.png" />
-          <span class="price" type=number>${{menuitem.item_price | number:'1.2-2'}}</span>
-        </div>
+  <div class="items-list">
+   
+     
+        <ion-card *ngFor="let menuitem of consMenuitem">
 
-    </ion-item>
-      </ion-scroll>
-  </ion-card>
-</div>
-   <!-- 
+
+          <ion-item>
+
+            <h2 class="name"> {{menuitem.item_name}}</h2>
+            <a href="#" *ngIf="menuitem.custom" class="custom" (click)="custom()">Customize</a>
+            <div class="add" (click)="addOrder(menuitem)">
+              <span>Add </span>
+              <img src="assets/img/add.png" />
+              <span class="price" type=number>${{menuitem.item_price | number:'1.2-2'}}</span>
+            </div>
+
+          </ion-item>
+
+
+        </ion-card>
+        
+  
+
+  </div>
+  <!-- 
     <ion-list>
         <ion-item *ngFor="let menuitem of consMenuitem">
 
@@ -85,12 +93,12 @@
       </ion-list>
   -->
 
-    <div class="cart">
-      <div >
-        <span>{{selectedItems.length}} items</span>
-        <span>${{totalamount}}</span>
-      </div>
-      <button (click)="goCart()">VIEW CART</button>
+  <div class="cart">
+    <div>
+      <span>{{selectedItems.length}} items</span>
+      <span>${{totalamount}}</span>
     </div>
+    <button (click)="goCart()">VIEW CART</button>
+  </div>
 
 </ion-content>

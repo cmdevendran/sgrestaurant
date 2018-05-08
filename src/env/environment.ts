@@ -11,5 +11,7 @@ export const nodeserver = "http://simplyorder.cleverapps.io";
  export const nodeserver = "https://sgrestaurant-server.herokuapp.com/"
  export const nodeserver = "http://localhost:8080";
 */
-export const nodeserver = "https://sgrestaurant-server.herokuapp.com";
+//export const nodeserver = "https://sgrestaurant-server.herokuapp.com";
+export const nodeserver = "http://ec2-54-179-152-170.ap-southeast-1.compute.amazonaws.com"
+//http://ec2-13-229-57-215.ap-southeast-1.compute.amazonaws.com"
 //export const nodeserver = "http://localhost:5000"
